@@ -1,4 +1,7 @@
+import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
+import 'package:mytickets/utils/app_styles.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -6,20 +9,23 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFEEEDF2),
+      backgroundColor: Styles.bgColor,
       body: ListView(
         children: [
           Container(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
             child: Column(
               children: [
+                const Gap(25),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Column(
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text("Good Morning"),
-                        Text("My Tickets"),
+                        Text("Good Morning", style: Styles.headlineStyle3,),
+                        const Gap(1),
+                        Text("My Tickets", style: Styles.headlineStyle1,),
                       ],
                     ),
                     Container(
@@ -32,6 +38,31 @@ class HomeScreen extends StatelessWidget {
                             image: AssetImage("assets/images/img_1.png"))
                       ),
                     )
+                  ],
+                ),
+                const Gap(25),
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: const Color(0xFFF4F6FD)
+                  ),
+                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+                  child: Row(
+                    children: [
+                      const Icon(FluentIcons.search_20_regular, color: Color(0xFFBFC205),),
+                      const SizedBox(width: 10,),
+                      Text("Search", style: Styles.headlineStyle4,)
+                    ],
+                  ),
+                ),
+                const Gap(40),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text("Upcoming Flights", style: Styles.headlineStyle2,),
+                    InkWell(
+                        onTap: (){} ,
+                        child: Text("View all", style: Styles.textStyle.copyWith(color: Styles.primaryColor),))
                   ],
                 )
               ],
