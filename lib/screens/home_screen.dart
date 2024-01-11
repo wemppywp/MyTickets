@@ -1,6 +1,7 @@
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:mytickets/screens/ticket_view.dart';
 import 'package:mytickets/utils/app_styles.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -67,7 +68,9 @@ class HomeScreen extends StatelessWidget {
                 )
               ],
             ),
-          )
+          ),
+          const Gap(15),
+          TicketView()
         ],
       ),
     );
